@@ -34,6 +34,17 @@
             border-radius: 10px; /* Redondea las esquinas de la imagen */
             max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
         }
+
+        /* Estilos para los botones de mes */
+        .month-button {
+            background-color: #FF5733; /* Color de fondo */
+            color: #fff; /* Color del texto */
+            padding: 10px 20px; /* Espaciado interno */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Esquinas redondeadas */
+            cursor: pointer; /* Cursor de puntero al pasar el mouse */
+            margin: 5px; /* Espaciado entre botones */
+        }
     </style>
 </head>
 <body>
@@ -41,50 +52,43 @@
         <h1>Recuerdos Especiales de Juan y Aranza</h1>
         <p>Aquí puedes encontrar momentos especiales que hemos compartido durante nuestros 10 meses juntos.</p>
 
-        <!-- Primer recuerdo -->
-        <div class="moment">
-            <h2>Momento 1</h2>
-            <p>Descripción del momento 1.</p>
-            <img src="imagen1.jpg" alt="Imagen 1">
-        </div>
+        <!-- Botones por mes -->
+        <button class="month-button" onclick="showMonth(0)">Diciembre</button>
+        <button class="month-button" onclick="showMonth(1)">Enero</button>
+        <button class="month-button" onclick="showMonth(2)">Febrero</button>
+        <button class="month-button" onclick="showMonth(3)">Marzo</button>
+        <button class="month-button" onclick="showMonth(4)">Abril</button>
+        <button class="month-button" onclick="showMonth(5)">Mayo</button>
+        <button class="month-button" onclick="showMonth(6)">Junio</button>
+        <button class="month-button" onclick="showMonth(7)">Julio</button>
+        <button class="month-button" onclick="showMonth(8)">Agosto</button>
+        <button class="month-button" onclick="showMonth(9)">Septiembre</button>
 
-        <!-- Segundo recuerdo -->
-        <div class="moment">
-            <h2>Momento 2</h2>
-            <p>Descripción del momento 2.</p>
-            <img src="imagen2.jpg" alt="Imagen 2">
+        <div id="month-display">
+            <!-- El nombre del mes y las fotos se mostrarán aquí -->
         </div>
-
-        <!-- Agrega botones por mes -->
-        <button class="month-button">Enero</button>
-        <button class="month-button">Febrero</button>
-        <!-- Agrega más momentos y botones según sea necesario -->
 
         <script>
-            // Obtén todas las imágenes y botones por mes
+            // Obtén todas las imágenes
             const images = document.querySelectorAll('.moment img');
-            const buttons = document.querySelectorAll('.month-button');
+            const monthDisplay = document.getElementById('month-display');
 
             // Función para mostrar imágenes por mes
-            function showImagesByMonth(month) {
+            function showMonth(month) {
+                const months = ['Diciembre', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre'];
+                const monthName = months[month];
+
+                // Cambia el contenido de la sección de visualización de mes
+                monthDisplay.innerHTML = `<h2>${monthName}</h2>`;
+
+                // Muestra las imágenes correspondientes
                 images.forEach((image, index) => {
-                    if (index === month) {
-                        image.style.display = 'block';
-                    } else {
-                        image.style.display = 'none';
-                    }
+                    image.style.display = index === month ? 'block' : 'none';
                 });
             }
 
-            // Agrega un evento de clic a cada botón por mes
-            buttons.forEach((button, index) => {
-                button.addEventListener('click', () => {
-                    showImagesByMonth(index);
-                });
-            });
-
             // Muestra las imágenes del primer mes al cargar la página
-            showImagesByMonth(0);
+            showMonth(0);
         </script>
     </div>
 </body>
