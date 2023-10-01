@@ -55,8 +55,37 @@
             <img src="imagen2.jpg" alt="Imagen 2">
         </div>
 
-        <!-- Agrega más recuerdos según sea necesario -->
+        <!-- Agrega botones por mes -->
+        <button class="month-button">Enero</button>
+        <button class="month-button">Febrero</button>
+        <!-- Agrega más momentos y botones según sea necesario -->
 
+        <script>
+            // Obtén todas las imágenes y botones por mes
+            const images = document.querySelectorAll('.moment img');
+            const buttons = document.querySelectorAll('.month-button');
+
+            // Función para mostrar imágenes por mes
+            function showImagesByMonth(month) {
+                images.forEach((image, index) => {
+                    if (index === month) {
+                        image.style.display = 'block';
+                    } else {
+                        image.style.display = 'none';
+                    }
+                });
+            }
+
+            // Agrega un evento de clic a cada botón por mes
+            buttons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    showImagesByMonth(index);
+                });
+            });
+
+            // Muestra las imágenes del primer mes al cargar la página
+            showImagesByMonth(0);
+        </script>
     </div>
 </body>
 </html>
