@@ -83,7 +83,11 @@
 
                 // Muestra las imágenes correspondientes
                 images.forEach((image, index) => {
-                    image.style.display = index === month ? 'block' : 'none';
+                    if (index >= month * 5 && index < (month + 1) * 5) {
+                        image.style.display = 'block';
+                    } else {
+                        image.style.display = 'none';
+                    }
                 });
             }
 
