@@ -81,21 +81,23 @@
                 // Cambia el contenido de la sección de visualización de mes
                 monthDisplay.innerHTML = `<h2>${monthName}</h2>`;
 
-                // Muestra las imágenes correspondientes
-                images.forEach((image, index) => {
-                    if (index >= month * 5 && index < (month + 1) * 5) {
-                        image.style.display = 'block';
-                    } else {
-                        image.style.display = 'none';
-                    }
+                // Oculta todas las imágenes
+                images.forEach((image) => {
+                    image.style.display = 'none';
                 });
+
+                // Muestra la imagen "fotocarta.jpg" solo en diciembre
+                if (month === 0) {
+                    const fotoCartaImage = document.querySelector('.foto-carta');
+                    fotoCartaImage.style.display = 'block';
+                }
             }
 
             // Muestra las imágenes del primer mes al cargar la página
             showMonth(0);
         </script>
     </div>
-    <!-- Agrega la imagen "fotocarta.jpg" al mismo nivel que el archivo HTML -->
-    <img src="fotocarta.jpg" alt="Imagen de la Carta de Diciembre">
+    <!-- Agrega la imagen "fotocarta.jpg" al mismo nivel que el archivo HTML y dale una clase -->
+    <img src="fotocarta.jpg" alt="Imagen de la Carta de Diciembre" class="foto-carta">
 </body>
 </html>
