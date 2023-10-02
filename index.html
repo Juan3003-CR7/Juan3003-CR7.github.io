@@ -35,8 +35,8 @@
             max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
         }
 
-        /* Estilos para los botones de mes */
-        .month-button {
+        /* Estilos para los botones */
+        .button {
             background-color: #FF5733; /* Color de fondo */
             color: #fff; /* Color del texto */
             padding: 10px 20px; /* Espaciado interno */
@@ -44,6 +44,11 @@
             border-radius: 5px; /* Esquinas redondeadas */
             cursor: pointer; /* Cursor de puntero al pasar el mouse */
             margin: 5px; /* Espaciado entre botones */
+            font-size: 18px; /* Tamaño de fuente */
+        }
+
+        .button:hover {
+            background-color: #FF8657; /* Cambia el color de fondo al pasar el mouse */
         }
     </style>
 </head>
@@ -52,18 +57,11 @@
         <h1>Recuerdos Especiales de Juan y Aranza</h1>
         <p>Aquí puedes encontrar momentos especiales que hemos compartido durante nuestros 10 meses juntos.</p>
 
-        <!-- Botones por mes -->
-        <button class="month-button" onclick="showMonth(0)">Diciembre</button>
-        <button class="month-button" onclick="showMonth(1)">Enero</button>
-        <button class="month-button" onclick="showMonth(2)">Febrero</button>
-        <button class="month-button" onclick="showMonth(3)">Marzo</button>
-        <button class="month-button" onclick="showMonth(4)">Abril</button>
-        <button class="month-button" onclick="showMonth(5)">Mayo</button>
-        <button class="month-button" onclick="showMonth(6)">Junio</button>
-        <button class="month-button" onclick="showMonth(7)">Julio</button>
-        <button class="month-button" onclick="showMonth(8)">Agosto</button>
-        <button class="month-button" onclick="showMonth(9)">Septiembre</button>
-
+        <!-- Botones con texto personalizado -->
+        <button class="button" onclick="showMonth(0)">Presentación de A&J</button>
+        <button class="button" onclick="showMonth(1)">Álbum de Fotos</button>
+        <!-- Agrega más botones y secciones aquí -->
+        
         <div id="month-display">
             <!-- El nombre del mes y las fotos se mostrarán aquí -->
         </div>
@@ -75,7 +73,7 @@
 
             // Función para mostrar imágenes por mes
             function showMonth(month) {
-                const months = ['Diciembre', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre'];
+                const months = ['Presentación de A&J', 'Álbum de Fotos'];
                 const monthName = months[month];
 
                 // Cambia el contenido de la sección de visualización de mes
@@ -86,14 +84,14 @@
                     image.style.display = 'none';
                 });
 
-                // Muestra la imagen "fotocarta.jpg" solo en diciembre
+                // Muestra la imagen "fotocarta.jpg" solo en Presentación de A&J
                 if (month === 0) {
                     const fotoCartaImage = document.querySelector('.foto-carta');
                     fotoCartaImage.style.display = 'block';
                 }
             }
 
-            // Muestra las imágenes del primer mes al cargar la página
+            // Muestra las imágenes de la Presentación de A&J al cargar la página
             showMonth(0);
         </script>
     </div>
