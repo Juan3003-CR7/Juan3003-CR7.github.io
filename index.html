@@ -34,6 +34,9 @@
         .moment img {
             border-radius: 10px; /* Redondea las esquinas de la imagen */
             max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+            height: auto; /* Ajusta automáticamente la altura */
+            display: block; /* Elimina el espacio vacío debajo de las imágenes */
+            margin: 0 auto; /* Centra las imágenes horizontalmente */
         }
 
         /* Estilos para los botones */
@@ -55,10 +58,15 @@
         /* Estilos para el álbum de fotos */
         .album {
             display: none; /* Oculta el álbum por defecto */
+            text-align: center; /* Alineación de imágenes en el centro */
         }
 
         .album img {
-            margin: 10px; /* Espaciado entre las imágenes del álbum */
+            max-width: 200px; /* Tamaño máximo de las imágenes */
+            height: auto; /* Ajusta automáticamente la altura */
+            margin: 5px; /* Espaciado entre las imágenes */
+            border-radius: 10px; /* Redondea las esquinas de las imágenes */
+            display: inline-block; /* Permite que las imágenes estén en línea unas con otras */
         }
     </style>
 </head>
