@@ -75,14 +75,56 @@
         <div id="month-display">
             <!-- El nombre del mes y las fotos se mostrarán aquí -->
         </div>
+
         <div class="album" id="album-display">
-    <!-- Imágenes del álbum se mostrarán aquí -->
-    <img src="https://i.imgur.com/3UthX4C.jpg" alt="Imagen 1">
-    <img src="https://i.imgur.com/EAJoXty.jpg" alt="Imagen 2">
-    <img src="https://i.imgur.com/UZTC8a3.jpg" alt="Imagen 3">
-    <img src="https://i.imgur.com/THFNdac.jpg" alt="Imagen 4">
-    <img src="https://i.imgur.com/8pfaaCh.jpg" alt="Imagen 5">
-    <img src="https://i.imgur.com/uXgFDkA.jpg" alt="Imagen 6">
-    <img src="https://i.imgur.com/NVQa3YO.jpg" alt="Imagen 7">
-    <img src="https://i.imgur.com/i6Vsisi.jpg" alt="Imagen 8">
-</div>
+            <!-- Imágenes del álbum se mostrarán aquí -->
+            <img src="https://i.imgur.com/3UthX4C.jpg" alt="Imagen 1">
+            <img src="https://i.imgur.com/EAJoXty.jpg" alt="Imagen 2">
+            <img src="https://i.imgur.com/UZTC8a3.jpg" alt="Imagen 3">
+            <img src="https://i.imgur.com/THFNdac.jpg" alt="Imagen 4">
+            <img src="https://i.imgur.com/8pfaaCh.jpg" alt="Imagen 5">
+            <img src="https://i.imgur.com/uXgFDkA.jpg" alt="Imagen 6">
+            <img src="https://i.imgur.com/NVQa3YO.jpg" alt="Imagen 7">
+            <img src="https://i.imgur.com/i6Vsisi.jpg" alt="Imagen 8">
+            <img src="https://i.imgur.com/hUHZehn.jpg" alt="Imagen 9">
+            <img src="https://i.imgur.com/yBl5iRP.jpg" alt="Imagen 10">
+            <img src="https://i.imgur.com/NNWaMxQ.jpg" alt="Imagen 11">
+            <img src="https://i.imgur.com/0qv5c4d.jpg" alt="Imagen 12">
+            <img src="https://i.imgur.com/pIVgxGw.jpg" alt="Imagen 13">
+            <img src="https://i.imgur.com/TNicyCT.jpg" alt="Imagen 14">
+            <img src="https://i.imgur.com/GkWMgW7.jpg" alt="Imagen 15">
+        </div>
+
+        <script>
+            // Obtén todas las imágenes
+            const images = document.querySelectorAll('.moment img');
+            const monthDisplay = document.getElementById('month-display');
+            const albumDisplay = document.getElementById('album-display');
+
+            // Función para mostrar imágenes por mes
+            function showMonth(month) {
+                const months = ['Presentación de A&J', 'Álbum de Fotos'];
+                const monthName = months[month];
+
+                // Cambia el contenido de la sección de visualización
+                monthDisplay.innerHTML = `<h2>${monthName}</h2>`;
+
+                // Oculta todas las imágenes
+                images.forEach((image) => {
+                    image.style.display = 'none';
+                });
+
+                // Muestra el álbum de fotos si se selecciona "Álbum de Fotos"
+                if (month === 1) {
+                    albumDisplay.style.display = 'block';
+                } else {
+                    albumDisplay.style.display = 'none';
+                }
+            }
+
+            // Muestra las imágenes de la Presentación de A&J al cargar la página
+            showMonth(0);
+        </script>
+    </div>
+</body>
+</html>
