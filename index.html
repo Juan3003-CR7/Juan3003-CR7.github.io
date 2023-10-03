@@ -31,6 +31,11 @@
             text-align: left; /* Alineación de texto izquierda */
         }
 
+        .moment img {
+            border-radius: 10px; /* Redondea las esquinas de la imagen */
+            max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+        }
+
         /* Estilos para los botones */
         .button {
             background-color: #FF5733; /* Color de fondo */
@@ -50,15 +55,10 @@
         /* Estilos para el álbum de fotos */
         .album {
             display: none; /* Oculta el álbum por defecto */
-            text-align: center; /* Alineación de imágenes en el centro */
         }
 
         .album img {
-            max-width: 100px; /* Tamaño máximo de las imágenes */
-            height: auto; /* Ajusta automáticamente la altura */
-            margin: 5px; /* Espaciado entre las imágenes */
-            border-radius: 10px; /* Redondea las esquinas de las imágenes */
-            display: inline-block; /* Permite que las imágenes estén en línea unas con otras */
+            margin: 10px; /* Espaciado entre las imágenes del álbum */
         }
     </style>
 </head>
@@ -106,7 +106,7 @@
                 const months = ['Presentación de A&J', 'Álbum de Fotos'];
                 const monthName = months[month];
 
-                // Cambia el contenido de la sección de visualización de mes
+                // Cambia el contenido de la sección de visualización
                 monthDisplay.innerHTML = `<h2>${monthName}</h2>`;
 
                 // Oculta todas las imágenes
